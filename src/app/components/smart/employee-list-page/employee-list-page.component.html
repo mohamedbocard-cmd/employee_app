@@ -1,0 +1,12 @@
+<h1 class="page-title">Gestion des Employes</h1>
+<app-employeelist
+
+  [employees]="employees"
+  (details)="showDetails($event)"
+  (delete)="onDelete($event)"
+  (edit)="onEdit($event)"
+
+/>
+@if (currentEmployee) {
+  <app-employee [employee]="currentEmployee" />
+}
