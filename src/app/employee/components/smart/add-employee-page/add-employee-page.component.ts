@@ -1,13 +1,14 @@
 import {Component, inject} from '@angular/core';
 import {EmployeeFormComponent} from '../../ui/employee-form/employee-form.component';
 import {Employee} from '../../../models/employee.model';
-import {EmployeeService} from '../../../employee.service';
 import {Router} from '@angular/router';
+import {EmployeelistComponent} from '../../ui/employeelist/employeelist.component';
+import {EmployeeService} from '../../../../employee.service';
 
 @Component({
   selector: 'app-add-employee-page',
   imports: [
-    EmployeeFormComponent
+    EmployeeFormComponent,
   ],
   templateUrl: './add-employee-page.component.html',
   styleUrl: './add-employee-page.component.scss'

@@ -1,0 +1,32 @@
+<!-- Login -->
+@if (message) {
+  <div class="message">
+    {{ message }}
+  </div>
+}
+<form [formGroup]="form" autocomplete="off" novalidate class="form">
+  <div class="form-row">
+    <label for="email">Email</label>
+    <input
+      data-testId="email-input"
+      formControlName="email"
+      id="email"
+      type="text"
+    />
+  </div>
+  <div class="form-row">
+    <label for="password">password</label>
+    <input
+      data-testId="password-input"
+      formControlName="password"
+      id="password"
+      type="password"
+    />
+  </div>
+  <div class="form-buttons">
+    <button data-testId="login-btn" (click)="onSubmit()" type="submit">
+      Login
+    </button>
+    <button type="reset">Cancel</button>
+  </div>
+</form>

@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import {Employee} from './models/employee.model';
 import {findIndex} from 'rxjs';
+import {Employee} from './employee/models/employee.model';
 
 @Injectable({
   providedIn: 'root'
@@ -37,7 +37,31 @@ export class EmployeeService {
       "name": "Demba ga",
       "department": "IT",
       "level": "S"
-    }
+    },
+   {
+     _id: '34479',
+     name: 'Denise BRAY',
+     department: 'HR',
+     level: 'M',
+   },
+   {
+     _id: 'df0b4',
+     name: 'Kristi PETERSON',
+     department: 'Marketing',
+     level: 'S',
+   },
+   {
+     _id: '6879f',
+     name: 'Boyer BASS',
+     department: 'IT',
+     level: 'S',
+   },
+   {
+     _id: '7f6de',
+     name: 'Barnes CONWAY',
+     department: 'IT',
+     level: 'J',
+   }
 
 
   ];

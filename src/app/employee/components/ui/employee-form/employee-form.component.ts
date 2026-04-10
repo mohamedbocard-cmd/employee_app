@@ -32,7 +32,7 @@ export class EmployeeFormComponent implements OnChanges{
       this.isEdit = true;
       const { _id, name, department, level } = this.employee() as Employee;
       const data = { _id, name, department, level };
-      this.form.patchValue(data);
+      this.form.setValue(data);
     }
   }
   onSubmit() {

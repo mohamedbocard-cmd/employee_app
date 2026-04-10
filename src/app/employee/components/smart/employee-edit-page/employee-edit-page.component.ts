@@ -1,9 +1,9 @@
 import {Component, computed, inject, input} from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
 
-import {EmployeeService} from '../../../employee.service';
 import {Employee} from '../../../models/employee.model';
 import {EmployeeFormComponent} from '../../ui/employee-form/employee-form.component';
+import {EmployeeService} from '../../../../employee.service';
 
 @Component({
   selector: 'app-employee-edit-page',

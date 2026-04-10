@@ -2,12 +2,12 @@ import {Component, Inject, inject} from '@angular/core';
 import {EmployeelistComponent} from '../../ui/employeelist/employeelist.component';
 import {EmployeeComponent} from '../../ui/employee/employee.component';
 import {Employee} from '../../../models/employee.model';
-import {EmployeeService} from '../../../employee.service';
-import {Router} from '@angular/router';
+import {Router, RouterLink} from '@angular/router';
+import {EmployeeService} from '../../../../employee.service';
 
 @Component({
   selector: 'app-employee-list-page',
-  imports: [EmployeelistComponent, EmployeeComponent],
+  imports: [EmployeelistComponent, EmployeeComponent, RouterLink],
   templateUrl: './employee-list-page.component.html',
   styleUrl: './employee-list-page.component.scss'
 })
