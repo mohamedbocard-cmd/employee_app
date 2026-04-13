@@ -62,14 +62,7 @@ export class EmployeeService {
      department: 'IT',
      level: 'J',
    }
-
-
   ];
-
-
-  constructor() {
-
-  }
 
   getEmployee(id:String){
     return this.employees.find(employee =>
@@ -90,16 +83,20 @@ export class EmployeeService {
   addEmployee(employee: Employee) {
     const _id = crypto.randomUUID();
     this.employees = [...this.employees, {...employee, _id}];
+    // Elle ajoute un nouvel employee dans le tableau sans modifier l’ancien (immutabilité).
 
   }
 
   editEmployee(employee: Employee) {
     const { _id } = employee;
     const index = this.employees.findIndex((employee) => employee._id === _id);
+      // findIndex(...) : parcourt le tableau et retourne :
+    //   l’index du premier élément qui correspond
+    // ou -1 si aucun élément n’est trouvé
 
     if (index !== -1) {
       const part1 = this.employees.slice(0, index);
-      const part2 = this.employees.slice(index + 1);
+      const part2 = this.employees.slice(index + 1); /*.slice(startIndex) : crée une nouvelle copie partielle du tableau*/
       const employees = part1.concat(employee).concat(part2);
       this.employees = employees;
     }

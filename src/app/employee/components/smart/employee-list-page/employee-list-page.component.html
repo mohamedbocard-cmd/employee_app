@@ -6,7 +6,6 @@
 </div>
 
 <app-employeelist
-
   [employees]="employees"
   (details)="showDetails($event)"
   (delete)="onDelete($event)"
@@ -16,3 +15,16 @@
 @if (currentEmployee) {
   <app-employee [employee]="currentEmployee" />
 }
+<!--[employees]="employees"-->
+<!--➡️ C’est un @Input()-->
+
+<!--Le composant parent envoie des données vers l’enfant-->
+<!--Ici, tu passes la liste employees au composant enfant-->
+
+<!--@if (currentEmployee)-->
+<!--C’est une directive de contrôle moderne-->
+<!--Elle remplace le classique *ngIf-->
+<!--Elle vérifie si currentEmployee existe (≠ null / undefined)-->
+
+<!--<app-employee [employee]="currentEmployee" />-->
+<!--Tu passes currentEmployee au composant enfant via un @Input()-->

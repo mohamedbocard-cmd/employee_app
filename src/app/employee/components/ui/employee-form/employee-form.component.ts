@@ -14,6 +14,7 @@ export class EmployeeFormComponent implements OnChanges{
 
   private fb = inject(FormBuilder);
   addEmployee = output<Employee>();
+  // Ça remplace l’ancien @Output() + EventEmitter.
   editEmployee = output<Employee>();
   employee = input<Employee>();
 

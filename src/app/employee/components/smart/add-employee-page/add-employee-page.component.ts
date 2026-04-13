@@ -2,7 +2,6 @@ import {Component, inject} from '@angular/core';
 import {EmployeeFormComponent} from '../../ui/employee-form/employee-form.component';
 import {Employee} from '../../../models/employee.model';
 import {Router} from '@angular/router';
-import {EmployeelistComponent} from '../../ui/employeelist/employeelist.component';
 import {EmployeeService} from '../../../../employee.service';
 
 @Component({

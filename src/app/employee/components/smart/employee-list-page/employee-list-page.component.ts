@@ -23,6 +23,8 @@ export class EmployeeListPageComponent {
 
   }
   currentEmployee: null | Employee = null;
+  // un objet de type Employee
+  // soit null
 
   employeeService = inject(EmployeeService);
   router = inject(Router);
