@@ -26,9 +26,12 @@ export class LoginPageComponent {
   onSubmit() {
     const { email, password } = this.form.value;
     const data = { email, password };
-    this.authServ.login(data as LoginData).subscribe({
+    this.authServ.login(data as LoginData).subscribe({  /* subscribe() sert à écouter l’Observable retourné par login()*/
       next: ({ token }) => {
         this.authServ.saveAuthToken(token);
+       // → généralement on stocke le token dans :
+          //localStorage
+       /// ou sessionStorage
         this.router.navigate(['/employee']);
       },
       error: ({ error }) => {

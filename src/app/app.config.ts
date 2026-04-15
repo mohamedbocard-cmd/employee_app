@@ -8,7 +8,7 @@ import {authInterceptors} from './authentification/interceptors/auth.interceptor
 export const appConfig: ApplicationConfig = {
   providers: [
     provideZoneChangeDetection({ eventCoalescing: true }),
-    provideRouter(routes, withComponentInputBinding()),
+    provideRouter(routes, withComponentInputBinding()),   /* c'est pour faire acces au donnees de routing*/
     provideHttpClient(withInterceptors([authInterceptors])),
   ],
 };

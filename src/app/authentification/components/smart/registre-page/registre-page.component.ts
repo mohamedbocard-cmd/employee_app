@@ -4,7 +4,7 @@ import {User} from '../../../../models/user';
 import {AuthentificationService} from '../../../service/authentification.service';
 
 @Component({
-  selector: 'app-registre-page',
+  selector: 'app-register-page',
   imports: [ReactiveFormsModule],
   templateUrl: './registre-page.component.html',
   styleUrl: './registre-page.component.scss'
@@ -24,17 +24,25 @@ export class RegistrePageComponent {
 
   onSubmit() {
     const { email, password, firstName, lastName } = this.form.value;
-    const user = { email, password, firstName, lastName };
-    this.authService.register(user as User).subscribe(
-      (registeredUser) => {
-        const { firstName, lastName } = registeredUser;
+
+    if (!email || !password || !firstName || !lastName) {
+      this.message = 'Please fill all fields';
+      return;
+    }
+
+    const user: User = { email, password, firstName, lastName };
+
+    this.authService.register(user).subscribe({
+      next: ({ firstName, lastName }) => {
         this.form.reset();
         this.message = `${firstName} ${lastName} registered!!`;
       },
-      (err) => {
-        this.message = 'An error happened';
+      error: (err) => {
+        console.error(err);
+        this.message = err?.error?.message || 'An error happened';
       }
-    );
+    });
+
   }
 
 }
