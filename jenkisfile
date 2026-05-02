@@ -1,0 +1,23 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('build') {
+            steps {
+                echo 'build diagana'
+            }
+        }
+
+        stage('Running Test') {
+            steps {
+                echo 'Running diagana'
+            }
+        }
+
+        stage('deploy Test') {
+            steps {
+                echo 'deploy diagana'
+            }
+        }
+    }
+}
